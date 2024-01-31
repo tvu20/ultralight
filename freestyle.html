@@ -3,6 +3,11 @@
 <html>
   <head>
     <title>Freestyle</title>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.thenounproject.com/png/4814597-200.png"
+    />
     <meta charset="utf-8" />
   </head>
   <body>
@@ -17,6 +22,7 @@
     <h5>heading 5...</h5>
     <h6>this is the last heading</h6>
     I am testing HTML/HyperText Markup Language!
+    <h4>Look at the favicon I set (in browser tab)!</h4>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Eget nunc scelerisque
@@ -49,6 +55,29 @@
     </details>
     <br />
 
+    <p>Testing out <b>different</b> <i>font</i> <u>tags</u></p>
+
+    <code>print("Hello World")</code>
+
+    <small>small text</small>
+    <del>strikethrough!</del>
+    <p>this is <sub>subscripted</sub> and <sup>superscripted!</sup></p>
+    <br />
+
+    This is a table! I made the border around it black
+    <table style="border: 1px solid black">
+      <tr>
+        <td>A</td>
+        <td>B</td>
+        <td>C</td>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>E</td>
+        <td>F</td>
+      </tr>
+    </table>
+
     My favorite colors:
     <ul>
       <li>Gray</li>
@@ -74,9 +103,65 @@
     <br />
     <br />
 
-    <dialog>This is a dialog box!</dialog>
+    <button>Click me!</button>
 
-    <input />
+    <hr />
+
+    <h3>Form!</h3>
+
+    <form>
+      <label for="fname">First name:</label><br />
+      <input type="text" id="fname" name="fname" /><br />
+      <label for="lname">Last name:</label><br />
+      <input type="text" id="lname" name="lname" />
+      <input type="submit" value="Submit" />
+      <label for="pwd">Password:</label><br />
+      <input type="password" id="pwd" name="pwd" />
+      <input type="reset" value="Reset" />
+    </form>
+
+    <p>What's your favorite animal?</p>
+
+    <form>
+      <input type="radio" id="cat" name="fav_animal" value="HTML" />
+      <label for="cat">Cat</label><br />
+      <input type="radio" id="dog" name="fav_animal" value="CSS" />
+      <label for="dog">Dog</label><br />
+    </form>
+
+    <p>Which do you like?</p>
+
+    <form>
+      <input type="checkbox" id="vehicle1" name="vehicle1" value="Trains" />
+      <label for="vehicle1"> Trains</label><br />
+      <input type="checkbox" id="vehicle2" name="vehicle2" value="Boats" />
+      <label for="vehicle2"> Boats</label><br />
+    </form>
+
+    <form>
+      <label for="favcolor">Pick a color!</label>
+      <input type="color" id="favcolor" name="favcolor" />
+    </form>
+
+    <form>
+      <label for="birthday">Enter your birthday!!</label>
+      <input type="date" />
+    </form>
+
+    <form>
+      <label for="birthdaytime">What's the next class date?</label>
+      <input type="datetime-local" />
+    </form>
+
+    <form>
+      <label for="myfile">Upload a file!</label>
+      <input type="file" id="myfile" name="myfile" />
+    </form>
+
+    <form>
+      <label for="quantity">you can only put numbers here</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="5" />
+    </form>
 
     <hr />
 
@@ -87,7 +172,14 @@
       alt="this is a cat"
     />
 
-    <!-- include audio element here -->
+    <audio controls>
+      <source src="assets/audio.mp3" type="audio/mp3" />
+      Your browser does not support the audio element.
+    </audio>
+
+    <video width="320" height="240" controls>
+      <source src="assets/movie.mp4" type="video/mp4" />
+    </video>
 
     <iframe
       width="560"
