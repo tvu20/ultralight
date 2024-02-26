@@ -1,0 +1,204 @@
+/* To come */
+img {
+  max-width: 100%;
+}
+html,
+body {
+  height: 100vh;
+}
+body {
+  margin: 0;
+  font-family: cursive;
+  font-size: 2em;
+  letter-spacing: 0.02em;
+}
+section {
+  height: 100vh;
+  background: black;
+  /*
+               vertical centering with flexbox:
+               https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
+            */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  width: 450px;
+  height: 300px;
+  background: white;
+  border-radius: 8px;
+  text-align: center;
+  /*
+               vertical centering with flexbox:
+               https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
+            */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Georgia";
+}
+.card .logo {
+  width: 100px;
+  position: absolute;
+  top: 215px;
+  left: 200px;
+  z-index: 5;
+}
+
+.card .text {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  justify-content: space-between;
+  align-items: flex-start;
+  /* padding-left: 50px; */
+}
+
+.card h1 {
+  font-size: 35px;
+  margin-bottom: 40px;
+  text-decoration: underline;
+  text-decoration-color: #ff579d;
+  text-underline-offset: 10px;
+}
+
+.card .secondary-text h2 {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.card .secondary-text h3 {
+  margin: 2px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.card .secondary-text p {
+  margin: 10px;
+  font-size: 12px;
+}
+
+.card .secondary-text {
+  position: absolute;
+  top: 420px;
+}
+
+.card .vert-line {
+  height: 300px;
+  width: 20px;
+  background-color: #ff579d;
+  position: relative;
+  left: -40px;
+}
+
+.card2 {
+  width: 450px;
+  height: 300px;
+  border-radius: 8px;
+  text-align: center;
+  /*
+                 vertical centering with flexbox:
+                 https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
+              */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Georgia";
+  background-color: #f5bcd4;
+}
+
+.card2 img {
+  height: 300px;
+  position: absolute;
+  right: 140px;
+}
+
+.card2 .text-container {
+  z-index: 5;
+  text-align: left;
+  font-family: Optima, sans-serif;
+  width: 100%;
+  padding: 20px 80px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: #ad1f5b;
+}
+
+.card2 .text-container hr {
+  border: 1px solid #8a003a;
+}
+
+.card2 .text-container h2 {
+  font-size: 30px;
+  margin: 0;
+  margin-bottom: 5px;
+  color: #8a003a;
+}
+
+.card2 .text-container p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.card2 .text-container h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.card3 {
+  width: 450px;
+  height: 300px;
+  border-radius: 8px;
+  text-align: center;
+  /*
+                   vertical centering with flexbox:
+                   https://philipwalton.github.io/solved-by-flexbox/demos/vertical-centering/
+                */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Georgia";
+  /* background-color: white; */
+  background-image: linear-gradient(to bottom right, #f788ad, #f0b159);
+}
+
+.card3 img {
+  width: 120px;
+  height: 120px;
+}
+
+.card3 .top {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 30px;
+}
+
+.card3 .top h1 {
+  font-size: 30px;
+  font-family: "Andalé Mono", monospace;
+  font-weight: 600;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.card3 .top h2 {
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 0px;
+  text-align: left;
+  font-family: "Monaco", monospace;
+}
+
+.card3 .bottom {
+  display: flex;
+  font-size: 18px;
+  width: 90%;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
