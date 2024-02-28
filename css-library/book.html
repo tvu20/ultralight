@@ -9,6 +9,12 @@
       type="image/x-icon"
       href="https://static.thenounproject.com/png/4814597-200.png"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <body>
@@ -21,9 +27,11 @@
   <script type="text/javascript" src="data.js"></script>
   <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const index = urlParams.get("id");
+    const id = urlParams.get("id");
 
-    bookData = data[+index];
+    bookData = data.filter((d) => d.name === id)[0];
+
+    // bookData = data[+index];
 
     document.getElementById("content").innerHTML = `<h1>${bookData.name}</h1>`;
   </script>

@@ -10,64 +10,140 @@
       href="https://static.thenounproject.com/png/4814597-200.png"
     />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
   </head>
 
   <script type="text/javascript" src="data.js"></script>
   <body>
-    <nav>
-      <a href="../index.html">Return to index.html</a>
-    </nav>
-    <h1>CSS Library</h1>
-    <div id="library-shelf">
-      <button id="all-button">All</button>
-      <button id="owned-button">Owned</button>
-      <button id="wish-button">Wishlist</button>
+    <div class="homepage">
+      <nav>
+        <a href="../index.html">Return to index.html</a>
+      </nav>
+      <div class="heading-text">
+        <h1>Library of Games</h1>
+        <p>
+          In my childhood, I did not have access to a lot of video games. Since
+          starting college, I have been playing a lot of games to make up for
+          lost time. Here is a (non-extensive) list of the games that I have
+          played and loved, games that I have played and not loved, and games I
+          wish to play.
+        </p>
+      </div>
+      <div id="library-shelf">
+        <button id="all-button">All</button>
+        <button id="playing-button">Currently Playing</button>
+        <button id="finished-button">Finished</button>
+        <button id="wish-button">Wishlist</button>
+      </div>
+
+      <!-- if have time: do a sort by? -->
+      <div id="library-container"></div>
     </div>
-    <div id="library-container"></div>
   </body>
 
   <script>
     var library = document.getElementById("library-container");
 
     const create_shelf = (shelfData) => {
-      shelfData.map((d, i) => {
+      shelfData.map((d) => {
+        // create page link
+        var pageLink = document.createElement("a");
+        pageLink.href = `./book.html?id=${d.name}`;
+        // pageLink.innerHTML = "See more";
+        library.appendChild(pageLink);
+
         // create current book container
         var currentBook = document.createElement("div");
         currentBook.className = "book-container";
-        library.appendChild(currentBook);
+        currentBook.title = d.name;
+        pageLink.appendChild(currentBook);
 
-        // create book title
-        var bookTitle = document.createElement("h1");
-        bookTitle.textContent = d.name;
-        currentBook.appendChild(bookTitle);
+        var bookImg = document.createElement("img");
+        bookImg.src = d.img;
+        bookImg.className = "cover";
+        currentBook.appendChild(bookImg);
 
-        // create page link
-        var pageLink = document.createElement("a");
-        pageLink.href = `./book.html?id=${i}`;
-        pageLink.innerHTML = "See more";
-        currentBook.appendChild(pageLink);
+        // var titleDiv = document.createElement("div");
+        // titleDiv.className = "game-title";
+        // currentBook.appendChild(titleDiv);
+
+        // var gameTitle = document.createElement("h2");
+        // gameTitle.textContent = d.name;
+        // titleDiv.appendChild(gameTitle);
+
+        // var status = document.createElement("p");
+        // status.textContent = d.status;
+        // titleDiv.appendChild(status);
+
+        // // create book title
+        // var bookTitle = document.createElement("h1");
+        // bookTitle.textContent = d.name;
+        // currentBook.appendChild(bookTitle);
+
+        // // create page link
+        // var pageLink = document.createElement("a");
+        // pageLink.href = `./book.html?id=${i}`;
+        // pageLink.innerHTML = "See more";
+        // currentBook.appendChild(pageLink);
       });
     };
 
+    // const resetButtons = (btnId) => {
+    //   const buttons = [
+    //     "all-button",
+    //     "finished-button",
+    //     "playing-button",
+    //     "wish-button",
+    //   ];
+
+    //   buttons.map((b) => {
+    //     document.getElementById(b).style.backgroundColor = "transparent";
+    //     document.getElementById(b).style.color = "white";
+    //   });
+
+    //   const curr = document.getElementById(btnId);
+
+    //   console.log(curr);
+
+    //   curr.style.border = "1px solid red";
+    //   curr.style.backgroundColor = "black";
+    // };
+
     document.getElementById("all-button").addEventListener("click", () => {
-      console.log("clicked");
       library.innerHTML = "";
+
+      //   resetButtons("all-button");
 
       create_shelf(data);
     });
 
-    document.getElementById("owned-button").addEventListener("click", () => {
-      console.log("clicked");
+    document.getElementById("finished-button").addEventListener("click", () => {
       library.innerHTML = "";
 
-      create_shelf(data.filter((d) => d.status === "owned"));
+      //   resetButtons("finished-button");
+
+      create_shelf(data.filter((d) => d.status === "finished"));
+    });
+
+    document.getElementById("playing-button").addEventListener("click", () => {
+      library.innerHTML = "";
+
+      //   resetButtons("playing-button");
+
+      create_shelf(data.filter((d) => d.status === "playing"));
     });
 
     document.getElementById("wish-button").addEventListener("click", () => {
-      console.log("clicked");
       library.innerHTML = "";
 
-      create_shelf(data.filter((d) => d.status === "wish"));
+      //   resetButtons("wish-button");
+
+      create_shelf(data.filter((d) => d.status === "wishlist"));
     });
 
     create_shelf(data);
