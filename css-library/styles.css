@@ -117,6 +117,11 @@ button {
   cursor: pointer;
 }
 
+.game-img {
+  width: 400px;
+  max-width: 35vw;
+}
+
 @media (max-width: 1100px) {
   #library-container {
     grid-template-columns: repeat(4, 1fr);

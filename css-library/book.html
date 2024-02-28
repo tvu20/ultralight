@@ -9,6 +9,7 @@
       type="image/x-icon"
       href="https://static.thenounproject.com/png/4814597-200.png"
     />
+    <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,10 +19,15 @@
   </head>
 
   <body>
-    <nav>
-      <a href="home.html">Return to library home</a>
-    </nav>
-    <div id="content"></div>
+    <div class="homepage">
+      <nav>
+        <a href="home.html">Return to library home</a>
+      </nav>
+      <div id="content">
+        <div id="left-col"></div>
+        <div id="right-col"></div>
+      </div>
+    </div>
   </body>
 
   <script type="text/javascript" src="data.js"></script>
@@ -33,6 +39,33 @@
 
     // bookData = data[+index];
 
-    document.getElementById("content").innerHTML = `<h1>${bookData.name}</h1>`;
+    const leftCol = document.getElementById("left-col");
+    const img = document.createElement("img");
+    img.src = bookData.img;
+    img.className = "game-img";
+    leftCol.appendChild(img);
+
+    const rightCol = document.getElementById("right-col");
+    rightCol.innerHTML = `<h1>${bookData.name}</h1>
+    <h2>${bookData.publisher}</h2><p>Year released: ${
+      bookData.released
+    }</p> <p>Status: ${
+      bookData.status.charAt(0).toUpperCase() + bookData.status.slice(1)
+    } <p> ${
+      bookData.status !== "wishlist"
+        ? `<p>My Rating: ${bookData.rating}/5</p>`
+        : ""
+    }`;
+
+    if (bookData.status !== "wishlist") {
+      const rating = document.createElement("METER");
+      rating.min = 0;
+      rating.max = 5;
+      rating.value = bookData.rating;
+      console.log(rating);
+      rightCol.appendChild(rating);
+    }
   </script>
 </html>
+
+<!-- <meter min="200" max="500" value="350">350 degrees</meter> -->
