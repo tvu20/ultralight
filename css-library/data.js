@@ -6,6 +6,8 @@ const data = [
     publisher: "ConcernedApe",
     released: 2016,
     rating: 4.5,
+    comment:
+      "Very cute town life simulator! Can be played both as a solo player and in coop. I never get tired of this game!",
   },
   {
     name: "Baldur's Gate 3",
@@ -13,6 +15,8 @@ const data = [
     img: "https://preview.redd.it/which-cover-is-better-v0-kukkaczhsccb1.jpg?width=600&format=pjpg&auto=webp&s=8408aced932510b238c4d6d006eb09503b56e86d",
     publisher: "Larian Studios",
     released: 2023,
+    comment:
+      "Game of the Year from 2023. Dungeons and Dragons but in RPG form. I really want to play this someday!",
   },
   {
     name: "The Witcher 3",
@@ -20,6 +24,8 @@ const data = [
     img: "https://upload.wikimedia.org/wikipedia/en/0/0c/Witcher_3_cover_art.jpg",
     publisher: "CD Projekt",
     released: 2015,
+    comment:
+      "I've seen the TV show that this game is based off of... or is this game the inspiration for the TV show?",
   },
   {
     name: "Phoenix Wright Ace Attorney Trilogy",
@@ -28,6 +34,8 @@ const data = [
     publisher: "Capcom",
     released: 2019,
     rating: 4.5,
+    comment:
+      "This game got me through COVID summer. Would recommend to everyone!",
   },
   {
     name: "The Great Ace Attorney Chronicles",
@@ -36,6 +44,8 @@ const data = [
     publisher: "Capcom",
     released: 2021,
     rating: 5,
+    comment:
+      "This game is a masterpiece. No need to play the Phoenix Wright games before it, although I would highly recommend doing so as well. I particularly love this game's version of Sherlock Holmes!",
   },
   {
     name: "Persona 5 Royal",
@@ -43,6 +53,8 @@ const data = [
     img: "https://m.media-amazon.com/images/I/81--2UBmfgL._AC_UF1000,1000_QL80_.jpg",
     publisher: "Atlus",
     released: 2019,
+    comment:
+      "I've only played the base Persona 5 game before, but can't wait to pick this up now that it's available on switch.",
   },
   {
     name: "Persona 3 Reload",
@@ -50,6 +62,8 @@ const data = [
     img: "https://e.snmc.io/lk/l/x/60cfc5e9b162026217e288779aaf2d0f/11640738",
     publisher: "Atlus",
     released: 2024,
+    comment:
+      "I've only played Persona 3 FES before, but excited to play this new remake of it!",
   },
   {
     name: "Undertale",
@@ -58,6 +72,8 @@ const data = [
     publisher: "Toby Fox",
     released: 2014,
     rating: 4,
+    comment:
+      "Did you know that someone uploaded a cover on Youtube of them playing Megalovania with a calculator?",
   },
   {
     name: "Deltarune",
@@ -66,6 +82,7 @@ const data = [
     publisher: "Toby Fox",
     released: 2019,
     rating: 4,
+    comment: "Excited for the rest of this game to be released!",
   },
   {
     name: "Fire Emblem Engage",
@@ -74,6 +91,8 @@ const data = [
     publisher: "Intelligent Systems",
     released: 2023,
     rating: 3,
+    comment:
+      "Definitely not as good as its predecessor, but any Fire Emblem game will at least be decent quality. ",
   },
   {
     name: "Triangle Strategy",
@@ -82,6 +101,8 @@ const data = [
     publisher: "Square Enix",
     released: 2022,
     rating: 4,
+    comment:
+      "I love the Game of Thrones meets Fire Emblem vibe of this game's story and design! Wish that the endings weren't so sad though.",
   },
   {
     name: "Pokemon Sun",
@@ -89,6 +110,7 @@ const data = [
     img: "https://upload.wikimedia.org/wikipedia/en/b/ba/Pokemon_Sun_Boxart.jpg",
     publisher: "Nintendo",
     released: 2016,
+    comment: "I need to play more Pokemon games.",
   },
   {
     name: "Pokemon Shield",
@@ -97,6 +119,8 @@ const data = [
     publisher: "Nintendo",
     released: 2019,
     rating: 3,
+    comment:
+      "First Pokemon game I ever played! I wasted hours running around and collecting pokemon.",
   },
   {
     name: "Fire Emblem Three Houses",
@@ -105,6 +129,8 @@ const data = [
     publisher: "Intelligent Systems",
     released: 2019,
     rating: 5,
+    comment:
+      "This is far and away my favorite game that I've played on the Switch. Incredibly replayable and all the routes are fantastic (though the Blue Lions route is my favorite).",
   },
   {
     name: "Fire Emblem Warriors: Three Hopes",
@@ -113,6 +139,8 @@ const data = [
     publisher: "Intelligent Systems",
     released: 2022,
     rating: 3.5,
+    comment:
+      "Definitely not as good as the game it's based on, but a decent sequel.",
   },
   {
     name: "Breath of the Wild",
@@ -121,6 +149,8 @@ const data = [
     publisher: "Nintendo",
     released: 2017,
     rating: 4,
+    comment:
+      "I think that I get too overwhelmed playing open-world games to fully enjoy them, but this game is fantastic.",
   },
   {
     name: "Tears of the Kingdom",
@@ -128,6 +158,7 @@ const data = [
     img: "https://m.media-amazon.com/images/I/81uht0xQ-YL._AC_UF1000,1000_QL80_.jpg",
     publisher: "Nintendo",
     released: 2023,
+    comment: "On the long, long bucket list of games to play on the Switch!",
   },
   {
     name: "Omori",
@@ -136,6 +167,7 @@ const data = [
     publisher: "Omocat",
     released: 2020,
     rating: 4.5,
+    comment: "This game is deeply, deeply sad.",
   },
   {
     name: "Disco Elysium",
@@ -144,6 +176,8 @@ const data = [
     publisher: "ZA/UM",
     released: 2019,
     rating: 5,
+    comment:
+      "I really need to finish this game! It's absolutely incredible and a pioneer in its genre.",
   },
   {
     name: "Hades",
@@ -152,6 +186,8 @@ const data = [
     publisher: "Supergiant Games",
     released: 2018,
     rating: 5,
+    comment:
+      "Stunning art, incredible gameplay, and compelling story. What's not to love?",
   },
   {
     name: "Transistor",
@@ -159,6 +195,7 @@ const data = [
     img: "https://www.rpgfan.com/wp-content/uploads/2020/10/Transistor-Cover-Art.jpg",
     publisher: "Supergiant Games",
     released: 2014,
+    comment: "I keep getting recommended this! Need to try sometime.",
   },
 
   {
@@ -168,5 +205,7 @@ const data = [
     publisher: "Spike Chunsoft",
     released: 2010,
     rating: 3,
+    comment:
+      "It's a fun game but I honestly wouldn't recommend compared to most of these other games.",
   },
 ];

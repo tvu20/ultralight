@@ -47,13 +47,13 @@
 
     const rightCol = document.getElementById("right-col");
     rightCol.innerHTML = `<h1>${bookData.name}</h1>
-    <h2>${bookData.publisher}</h2><p>Year released: ${
+    <h2>Publisher: ${bookData.publisher}</h2><p><b>Year released:</b> ${
       bookData.released
-    }</p> <p>Status: ${
+    }</p> <p><b>My status:</b> ${
       bookData.status.charAt(0).toUpperCase() + bookData.status.slice(1)
     } <p> ${
       bookData.status !== "wishlist"
-        ? `<p>My Rating: ${bookData.rating}/5</p>`
+        ? `<p><b>My Rating:</b> ${bookData.rating}/5</p>`
         : ""
     }`;
 
@@ -65,6 +65,11 @@
       console.log(rating);
       rightCol.appendChild(rating);
     }
+
+    const review = document.createElement("p");
+    review.className = "game-review";
+    review.textContent = bookData.comment;
+    rightCol.appendChild(review);
   </script>
 </html>
 
