@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Template</title>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.thenounproject.com/png/4814597-200.png"
+    />
+  </head>
+
+  <body>
+    <nav>
+      <a href="home.html">Return to library home</a>
+    </nav>
+    <div id="content"></div>
+  </body>
+
+  <script type="text/javascript" src="data.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const index = urlParams.get("id");
+
+    bookData = data[+index];
+
+    document.getElementById("content").innerHTML = `<h1>${bookData.name}</h1>`;
+  </script>
+</html>

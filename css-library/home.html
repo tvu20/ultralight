@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Home</title>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.thenounproject.com/png/4814597-200.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <script type="text/javascript" src="data.js"></script>
+  <body>
+    <nav>
+      <a href="../index.html">Return to index.html</a>
+    </nav>
+    <h1>CSS Library</h1>
+    <div id="library-shelf">
+      <button id="all-button">All</button>
+      <button id="owned-button">Owned</button>
+      <button id="wish-button">Wishlist</button>
+    </div>
+    <div id="library-container"></div>
+  </body>
+
+  <script>
+    var library = document.getElementById("library-container");
+
+    const create_shelf = (shelfData) => {
+      shelfData.map((d, i) => {
+        // create current book container
+        var currentBook = document.createElement("div");
+        currentBook.className = "book-container";
+        library.appendChild(currentBook);
+
+        // create book title
+        var bookTitle = document.createElement("h1");
+        bookTitle.textContent = d.name;
+        currentBook.appendChild(bookTitle);
+
+        // create page link
+        var pageLink = document.createElement("a");
+        pageLink.href = `./book.html?id=${i}`;
+        pageLink.innerHTML = "See more";
+        currentBook.appendChild(pageLink);
+      });
+    };
+
+    document.getElementById("all-button").addEventListener("click", () => {
+      console.log("clicked");
+      library.innerHTML = "";
+
+      create_shelf(data);
+    });
+
+    document.getElementById("owned-button").addEventListener("click", () => {
+      console.log("clicked");
+      library.innerHTML = "";
+
+      create_shelf(data.filter((d) => d.status === "owned"));
+    });
+
+    document.getElementById("wish-button").addEventListener("click", () => {
+      console.log("clicked");
+      library.innerHTML = "";
+
+      create_shelf(data.filter((d) => d.status === "wish"));
+    });
+
+    create_shelf(data);
+  </script>
+</html>
