@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Classroom</title>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.thenounproject.com/png/4814597-200.png"
+    />
+
+    <style>
+      body {
+        transition: background-color 300ms ease-in;
+        /* background-color: black; */
+      }
+      main {
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      p {
+        color: black;
+        transition: color 300ms ease-in;
+        font-family: monospace;
+        width: 700px;
+        max-width: 80vw;
+        font-size: 16px;
+      }
+
+      .link {
+        margin-top: 15px;
+        font-size: 14px;
+        text-decoration: underline;
+        color: white;
+        opacity: 0;
+        width: 700px;
+        max-width: 80vw;
+        font-family: monospace;
+        text-underline-offset: 3px;
+        transition: opacity 300ms ease-in;
+      }
+
+      span {
+        transition: color 300ms ease-in;
+      }
+      @media screen and (max-width: 900px) {
+        body {
+          background-color: black;
+        }
+
+        p {
+          color: white;
+        }
+        .large {
+          background-color: white;
+          cursor: pointer;
+        }
+
+        .link {
+          opacity: 0.8;
+        }
+      }
+
+      @media screen and (max-width: 768px) {
+        .middle {
+          background-color: white;
+          cursor: pointer;
+        }
+      }
+
+      @media screen and (max-width: 420px) {
+        .end {
+          background-color: white;
+          cursor: pointer;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <p>
+        <b>Describe the room you're sitting in.</b>
+      </p>
+      <p>
+        I am in <span class="middle">room 206 in the visual art building</span>.
+        I am about to create a website dedicated to the classroom about
+        <span class="large">CSS media queries</span>. There are large windows on
+        two sides of the room forming a right angle.
+        <span class="end"
+          >There is a large table in the center of the room where most people
+          are sitting</span
+        >, but I am charging my computer near the
+        <span class="middle">wall opposite from the wide windows</span>. The
+        window nearest to me is partially open and there is a cold draft that
+        blows in. I can hear
+        <span class="large">the cars rushing by on the street. Everyone</span>
+        is typing as they similarly reflect on the room.
+      </p>
+      <a class="link" href="index.html">Return home</a>
+    </main>
+  </body>
+</html>
