@@ -1,5 +1,6 @@
 body {
   margin: 0px;
+  background: black;
 }
 
 nav {
@@ -20,7 +21,7 @@ nav a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("https://wallpapers.com/images/hd/tech-background-1l29np90hcci8axg.jpg");
+  background-image: url("https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8YmxhY2slMjB0ZXh0dXJlfGVufDB8fDB8fHww");
   /* background-attachment: fixed; */
   background-repeat: no-repeat;
   min-height: 100%;
