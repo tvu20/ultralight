@@ -37,8 +37,6 @@
 
     bookData = data.filter((d) => d.name === id)[0];
 
-    // bookData = data[+index];
-
     const leftCol = document.getElementById("left-col");
     const img = document.createElement("img");
     img.src = bookData.img;
@@ -72,5 +70,3 @@
     rightCol.appendChild(review);
   </script>
 </html>
-
-<!-- <meter min="200" max="500" value="350">350 degrees</meter> -->

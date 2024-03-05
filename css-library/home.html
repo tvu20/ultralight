@@ -54,7 +54,6 @@
         // create page link
         var pageLink = document.createElement("a");
         pageLink.href = `./book.html?id=${d.name}`;
-        // pageLink.innerHTML = "See more";
         library.appendChild(pageLink);
 
         // create current book container
@@ -67,57 +66,11 @@
         bookImg.src = d.img;
         bookImg.className = "cover";
         currentBook.appendChild(bookImg);
-
-        // var titleDiv = document.createElement("div");
-        // titleDiv.className = "game-title";
-        // currentBook.appendChild(titleDiv);
-
-        // var gameTitle = document.createElement("h2");
-        // gameTitle.textContent = d.name;
-        // titleDiv.appendChild(gameTitle);
-
-        // var status = document.createElement("p");
-        // status.textContent = d.status;
-        // titleDiv.appendChild(status);
-
-        // // create book title
-        // var bookTitle = document.createElement("h1");
-        // bookTitle.textContent = d.name;
-        // currentBook.appendChild(bookTitle);
-
-        // // create page link
-        // var pageLink = document.createElement("a");
-        // pageLink.href = `./book.html?id=${i}`;
-        // pageLink.innerHTML = "See more";
-        // currentBook.appendChild(pageLink);
       });
     };
 
-    // const resetButtons = (btnId) => {
-    //   const buttons = [
-    //     "all-button",
-    //     "finished-button",
-    //     "playing-button",
-    //     "wish-button",
-    //   ];
-
-    //   buttons.map((b) => {
-    //     document.getElementById(b).style.backgroundColor = "transparent";
-    //     document.getElementById(b).style.color = "white";
-    //   });
-
-    //   const curr = document.getElementById(btnId);
-
-    //   console.log(curr);
-
-    //   curr.style.border = "1px solid red";
-    //   curr.style.backgroundColor = "black";
-    // };
-
     document.getElementById("all-button").addEventListener("click", () => {
       library.innerHTML = "";
-
-      //   resetButtons("all-button");
 
       create_shelf(data);
     });
@@ -125,23 +78,17 @@
     document.getElementById("finished-button").addEventListener("click", () => {
       library.innerHTML = "";
 
-      //   resetButtons("finished-button");
-
       create_shelf(data.filter((d) => d.status === "finished"));
     });
 
     document.getElementById("playing-button").addEventListener("click", () => {
       library.innerHTML = "";
 
-      //   resetButtons("playing-button");
-
       create_shelf(data.filter((d) => d.status === "playing"));
     });
 
     document.getElementById("wish-button").addEventListener("click", () => {
       library.innerHTML = "";
-
-      //   resetButtons("wish-button");
 
       create_shelf(data.filter((d) => d.status === "wishlist"));
     });
