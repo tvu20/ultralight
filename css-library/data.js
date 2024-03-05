@@ -28,6 +28,34 @@ const data = [
       "I've seen the TV show that this game is based off of... or is this game the inspiration for the TV show?",
   },
   {
+    name: "Persona 3 Reload",
+    status: "wishlist",
+    img: "https://e.snmc.io/lk/l/x/60cfc5e9b162026217e288779aaf2d0f/11640738",
+    publisher: "Atlus",
+    released: 2024,
+    comment:
+      "I've only played Persona 3 FES before, but excited to play this new remake of it!",
+  },
+  {
+    name: "Undertale",
+    status: "finished",
+    img: "https://m.media-amazon.com/images/M/MV5BNzkwZDliNGEtMDNkNi00ODcxLWI1N2UtNDE1NmZlM2QyMTY4XkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_.jpg",
+    publisher: "Toby Fox",
+    released: 2014,
+    rating: 4,
+    comment:
+      "Did you know that someone uploaded a cover on Youtube of them playing Megalovania with a calculator?",
+  },
+  {
+    name: "Deltarune",
+    status: "playing",
+    img: "https://i.redd.it/0hl68gt6i0p71.png",
+    publisher: "Toby Fox",
+    released: 2019,
+    rating: 4,
+    comment: "Excited for the rest of this game to be released!",
+  },
+  {
     name: "Phoenix Wright Ace Attorney Trilogy",
     status: "finished",
     img: "https://i.ebayimg.com/images/g/RqAAAOSw14xWJC2x/s-l1200.webp",
@@ -56,34 +84,7 @@ const data = [
     comment:
       "I've only played the base Persona 5 game before, but can't wait to pick this up now that it's available on switch.",
   },
-  {
-    name: "Persona 3 Reload",
-    status: "wishlist",
-    img: "https://e.snmc.io/lk/l/x/60cfc5e9b162026217e288779aaf2d0f/11640738",
-    publisher: "Atlus",
-    released: 2024,
-    comment:
-      "I've only played Persona 3 FES before, but excited to play this new remake of it!",
-  },
-  {
-    name: "Undertale",
-    status: "finished",
-    img: "https://m.media-amazon.com/images/M/MV5BNzkwZDliNGEtMDNkNi00ODcxLWI1N2UtNDE1NmZlM2QyMTY4XkEyXkFqcGdeQXVyMTA0MTM5NjI2._V1_.jpg",
-    publisher: "Toby Fox",
-    released: 2014,
-    rating: 4,
-    comment:
-      "Did you know that someone uploaded a cover on Youtube of them playing Megalovania with a calculator?",
-  },
-  {
-    name: "Deltarune",
-    status: "playing",
-    img: "https://i.redd.it/0hl68gt6i0p71.png",
-    publisher: "Toby Fox",
-    released: 2019,
-    rating: 4,
-    comment: "Excited for the rest of this game to be released!",
-  },
+
   {
     name: "Fire Emblem Engage",
     status: "finished",
