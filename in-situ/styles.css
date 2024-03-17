@@ -1,0 +1,90 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0px;
+}
+html {
+  font-family: sans-serif;
+  scroll-snap-type: mandatory;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y mandatory;
+}
+section {
+  /* border: 1px solid red; */
+  scroll-snap-align: start;
+  text-align: center;
+  position: relative;
+}
+
+.background-parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: none;
+  height: 100vh;
+  width: 100%;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro {
+  background-image: linear-gradient(
+      rgba(39, 125, 73, 0.1),
+      rgba(39, 125, 73, 0.1)
+    ),
+    url("../assets/in-situ/gardenwater.jpg");
+  background-blend-mode: screen;
+}
+.sight {
+  background-image: url("../assets/in-situ/lake.jpg");
+}
+.smell {
+  background-image: url("../assets/in-situ/flowers.jpg");
+}
+.hear {
+  background-image: url("../assets/in-situ/ducks.jpg");
+}
+.taste {
+  background-image: linear-gradient(
+      rgba(252, 186, 3, 0.1),
+      rgba(252, 186, 3, 0.1)
+    ),
+    url("../assets/in-situ/dining.jpg");
+  background-blend-mode: screen;
+}
+.feel {
+  background-image: linear-gradient(rgba(79, 52, 6, 0.3), rgba(79, 52, 6, 0.2)),
+    url("../assets/in-situ/house.jpg");
+  background-blend-mode: normal;
+}
+
+.textbox {
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 20px 40px;
+}
+
+.textbox h1 {
+  font-family: "Qwitcher Grypen", cursive;
+  font-size: 150px;
+  font-weight: 400;
+  margin: 0;
+}
+
+.textbox p {
+  font-family: "Quattrocento Sans", sans-serif;
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.intro h1 {
+  font-size: 160px;
+  font-weight: 700;
+}
+
+.intro p {
+  font-size: 30px;
+}
