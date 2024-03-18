@@ -88,3 +88,30 @@ section {
 .intro p {
   font-size: 30px;
 }
+
+@media screen and (max-width: 900px) {
+  .textbox {
+    max-width: 90vw;
+  }
+  .textbox h1 {
+    font-size: 100px;
+  }
+
+  .intro h1 {
+    font-size: 120px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .textbox h1 {
+    font-size: 80px;
+  }
+
+  .intro h1 {
+    font-size: 60px;
+  }
+
+  .textbox p {
+    font-size: 20px;
+  }
+}
