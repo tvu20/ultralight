@@ -23,9 +23,8 @@
       .large-container {
         height: 100vh;
         width: 100%;
-        background-image: url("https://www.stevenholl.com/wp-content/uploads/2021/09/PaulWarchol_LCA_U8A5794-Pano_WH.jpg");
         background-repeat: none;
-        object-fit: cover;
+        object-fit: contain;
 
         display: flex;
         align-items: center;
@@ -48,6 +47,32 @@
         text-align: center;
         width: 220px;
         margin: 0 10px;
+        opacity: 0;
+      }
+
+      body[data-status="morning"] .large-container {
+        background-image: url("https://images.adsttc.com/media/images/59d7/d3a7/b22e/3883/1f00/055e/newsletter/17_-28_-017A.jpg?1507316602");
+      }
+      body[data-status="morning"] #morning {
+        opacity: 1;
+      }
+      body[data-status="afternoon"] .large-container {
+        background-image: url("https://www.bnim.com/sites/default/files/project_images_new/lewis-center-for-the-arts-bnim-f77c2312-befa-4912-aa01-e19aa89b01eb.jpg");
+      }
+      body[data-status="afternoon"] #afternoon {
+        opacity: 1;
+      }
+      body[data-status="evening"] .large-container {
+        background-image: url("https://www.stevenholl.com/wp-content/uploads/2021/09/PaulWarchol_LCA_U8A5794-Pano_WH.jpg");
+      }
+      body[data-status="evening"] #evening {
+        opacity: 1;
+      }
+      body[data-status="night"] .large-container {
+        background-image: url("https://www.stevenholl.com/wp-content/uploads/2021/09/ffff47b11025b281ff4b7a71dfccfc9a.jpg");
+      }
+      body[data-status="night"] #afternoon {
+        opacity: 1;
       }
     </style>
   </head>
@@ -55,25 +80,25 @@
   <body>
     <section class="large-container">
       <div class="card-container">
-        <div class="card">
+        <div class="card" id="morning">
           <p>
             gray walls and sunlight<br />
             open space and gentle notes<br />dreaming pianists
           </p>
         </div>
-        <div class="card">
+        <div class="card" id="afternoon">
           <p>
             twelve wooden boxes<br />
             each hiding a lone artist<br />through a glass window
           </p>
         </div>
-        <div class="card">
+        <div class="card" id="evening">
           <p>
             single piano<br />
             the floor sinks beneath its weight<br />waiting to be played
           </p>
         </div>
-        <div class="card">
+        <div id="evening" class="card">
           <p>
             three buildings in one<br />
             home of the wayward artist<br />center for the arts
@@ -82,4 +107,5 @@
       </div>
     </section>
   </body>
+  <script src="script.js"></script>
 </html>
