@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Effron Music Building</title>
+    <meta charset="utf-8" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://static.thenounproject.com/png/4814597-200.png"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div id="nav">
+      <button
+        id="third-btn"
+        type="button"
+        onclick="smoothScroll(document.getElementById('third'), 'third')"
+      >
+        3
+      </button>
+      <button
+        id="second-btn"
+        type="button"
+        onclick="smoothScroll(document.getElementById('second'), 'second')"
+      >
+        2
+      </button>
+      <button
+        id="first-btn"
+        type="button"
+        onclick="smoothScroll(document.getElementById('first'), 'first')"
+      >
+        1
+      </button>
+      <button
+        id="ground-btn"
+        type="button"
+        onclick="smoothScroll(document.getElementById('ground'), 'ground')"
+      >
+        0
+      </button>
+    </div>
+
+    <div id="third" class="floor active">third floor!!!</div>
+    <div id="second" class="floor">second floor!!!</div>
+    <div id="first" class="floor">first floor!!!</div>
+    <div id="ground" class="floor">ground floor!!!</div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+}
+
+#nav {
+  position: fixed;
+  border: 1px solid blue;
+  right: 0px;
+  top: 0px;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 25px;
+}
+
+#nav button {
+  height: 20px;
+  width: 20px;
+  background: white;
+  /* transition: all 1s; */
+}
+
+#nav .active {
+  background: black;
+}
+
+.floor {
+  height: 100vh;
+}
+
+#third {
+  background-color: pink;
+}
+
+#second {
+  background-color: deepskyblue;
+}
+
+#first {
+  background-color: lightsalmon;
+}
+
+#ground {
+  background-color: palegreen;
+}
