@@ -9,12 +9,22 @@ const mapFloors = {
   ground: 3,
 };
 
+const floorName = {
+  third: "3F",
+  second: "2F",
+  first: "1F",
+  ground: "G",
+};
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     const intersecting = entry.isIntersecting;
 
     if (intersecting) {
       currentFloor = entry.target.id.split("-card")[0];
+
+      const h3 = document.querySelector(".floor-title");
+      h3.textContent = floorName[currentFloor];
     }
   });
 });
