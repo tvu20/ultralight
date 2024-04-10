@@ -76,6 +76,12 @@ body {
   background-color: palegreen;
 } */
 
+.up-container,
+.down-container {
+  display: none;
+  /* border: 1px solid red; */
+}
+
 .floor-card {
   width: 80vw;
   max-width: 980px;
@@ -100,6 +106,7 @@ body {
   .floor-card {
     height: 75vh;
     margin-left: 0;
+    margin-top: 30px;
   }
 
   #nav {
@@ -109,6 +116,7 @@ body {
     padding-top: 10px;
 
     flex-direction: row;
+    justify-content: center;
   }
 
   #nav .elevator-container {
@@ -117,5 +125,27 @@ body {
 
   #nav .elevator {
     margin: 0 10px;
+  }
+
+  .up-container {
+    display: block;
+    position: fixed;
+    top: 50px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .down-container {
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+  }
+
+  .direction {
+    display: none;
   }
 }

@@ -15,6 +15,7 @@
   <body>
     <div id="nav">
       <button
+        class="up-btn direction"
         type="button"
         onclick="smoothScroll(document.getElementById('third'), 'third')"
       >
@@ -27,6 +28,7 @@
         <div id="ground-btn" class="elevator"></div>
       </div>
       <button
+        class="down-btn direction"
         type="button"
         onclick="smoothScroll(document.getElementById('ground'), 'ground')"
       >
@@ -61,6 +63,25 @@
       >
         .
       </button> -->
+    </div>
+
+    <div class="up-container">
+      <button
+        class="up-btn"
+        type="button"
+        onclick="smoothScroll(document.getElementById('third'), 'third')"
+      >
+        up
+      </button>
+    </div>
+    <div class="down-container">
+      <button
+        class="down-btn"
+        type="button"
+        onclick="smoothScroll(document.getElementById('ground'), 'ground')"
+      >
+        down
+      </button>
     </div>
 
     <div id="third" class="floor active">
