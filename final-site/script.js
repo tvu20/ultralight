@@ -26,6 +26,33 @@ observer.observe(document.getElementById("ground-card"));
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
+  var temp = document.querySelectorAll(".up-btn");
+
+  temp.forEach((e) => {
+    e.style.opacity = "0";
+  });
+};
+
+const updateArrows = () => {
+  if (currentFloor === "ground") {
+    var temp = document.querySelectorAll(".down-btn");
+
+    temp.forEach((e) => {
+      e.style.opacity = "0";
+    });
+  } else if (currentFloor === "third") {
+    var temp = document.querySelectorAll(".up-btn");
+
+    temp.forEach((e) => {
+      e.style.opacity = "0";
+    });
+  } else {
+    var temp = document.querySelectorAll("button");
+
+    temp.forEach((e) => {
+      e.style.opacity = "1";
+    });
+  }
 };
 
 // updates current position on scroll
@@ -39,6 +66,8 @@ document.addEventListener("wheel", function () {
       curr.className = "elevator";
     }
   });
+
+  updateArrows();
 });
 
 // updates current position on click
@@ -63,6 +92,20 @@ window.scrollUp = function () {
     block: "start",
     inline: "start",
   });
+
+  if (newId === 0) {
+    var temp = document.querySelectorAll(".up-btn");
+
+    temp.forEach((e) => {
+      e.style.opacity = "0";
+    });
+  } else {
+    var temp = document.querySelectorAll("button");
+
+    temp.forEach((e) => {
+      e.style.opacity = "1";
+    });
+  }
 };
 
 // updates current position on click
@@ -87,6 +130,20 @@ window.scrollDown = function () {
     block: "start",
     inline: "start",
   });
+
+  if (newId === 3) {
+    var temp = document.querySelectorAll(".down-btn");
+
+    temp.forEach((e) => {
+      e.style.opacity = "0";
+    });
+  } else {
+    var temp = document.querySelectorAll("button");
+
+    temp.forEach((e) => {
+      e.style.opacity = "1";
+    });
+  }
 };
 
 // updates time of day

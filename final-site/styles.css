@@ -4,7 +4,6 @@ body {
 
 #nav {
   position: fixed;
-  border: 1px solid blue;
   right: 0px;
   top: 0px;
   height: 100vh;
@@ -54,9 +53,9 @@ body {
 }
 
 .vertical-scroll {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   height: 100vh;
-  width: 100vw;
+  /* width: 100vw; */
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
 }
@@ -67,6 +66,33 @@ body {
   justify-content: flex-start;
   align-items: center;
   scroll-snap-align: start;
+}
+
+.up-btn.direction {
+  margin-top: 20px;
+}
+
+.down-btn.direction {
+  margin-bottom: 20px;
+}
+
+.up-btn,
+.down-btn {
+  width: 40px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all 1s;
+}
+
+.up-btn {
+  opacity: 0;
+}
+
+.up-btn img,
+.down-btn img {
+  width: 80%;
+  object-fit: contain;
 }
 
 /* #third {
@@ -148,7 +174,7 @@ body {
   .down-container {
     display: block;
     position: fixed;
-    bottom: 30px;
+    bottom: 20px;
     width: 100vw;
     display: flex;
     justify-content: center;
