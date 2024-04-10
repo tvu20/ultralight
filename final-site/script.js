@@ -14,9 +14,11 @@ document.addEventListener("wheel", function (ev) {
     var curr = document.getElementById(i + "-btn");
 
     if (index === id) {
-      curr.className = "active floor";
+      curr.className = "active elevator";
+      // curr.className = "active floor";
     } else {
-      curr.className = "floor ";
+      curr.className = "elevator ";
+      // curr.className = "floor ";
     }
   });
 });
@@ -31,9 +33,9 @@ window.smoothScroll = function (target, id) {
 
     // active id
     if (i === id) {
-      curr.className = "active floor";
+      curr.className = "active elevator";
     } else {
-      curr.className = "floor ";
+      curr.className = "elevator ";
     }
   });
 

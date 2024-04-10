@@ -15,40 +15,60 @@
   <body>
     <div id="nav">
       <button
+        type="button"
+        onclick="smoothScroll(document.getElementById('third'), 'third')"
+      >
+        up
+      </button>
+      <div class="elevator-container">
+        <div id="third-btn" class="elevator active"></div>
+        <div id="second-btn" class="elevator"></div>
+        <div id="first-btn" class="elevator"></div>
+        <div id="ground-btn" class="elevator"></div>
+      </div>
+      <button
+        type="button"
+        onclick="smoothScroll(document.getElementById('ground'), 'ground')"
+      >
+        down
+      </button>
+      <!-- <button
         id="third-btn"
         type="button"
         class="active"
         onclick="smoothScroll(document.getElementById('third'), 'third')"
       >
-        3
-      </button>
-      <button
+        .
+      </button> -->
+      <!-- <button
         id="second-btn"
         type="button"
         onclick="smoothScroll(document.getElementById('second'), 'second')"
       >
-        2
+        .
       </button>
       <button
         id="first-btn"
         type="button"
         onclick="smoothScroll(document.getElementById('first'), 'first')"
       >
-        1
+        .
       </button>
       <button
         id="ground-btn"
         type="button"
         onclick="smoothScroll(document.getElementById('ground'), 'ground')"
       >
-        0
-      </button>
+        .
+      </button> -->
     </div>
 
-    <div id="third" class="floor active">third floor!!!</div>
-    <div id="second" class="floor">second floor!!!</div>
-    <div id="first" class="floor">first floor!!!</div>
-    <div id="ground" class="floor">ground floor!!!</div>
+    <div id="third" class="floor active">
+      <div class="floor-card"></div>
+    </div>
+    <div id="second" class="floor"><div class="floor-card"></div></div>
+    <div id="first" class="floor"><div class="floor-card"></div></div>
+    <div id="ground" class="floor"><div class="floor-card"></div></div>
 
     <script src="script.js"></script>
   </body>
