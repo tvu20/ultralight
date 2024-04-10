@@ -1,46 +1,51 @@
 const IDS = ["third", "second", "first", "ground"];
 
-const scroll = function (c, a, b, i) {
-  i++;
-  if (i > 30) return;
-  c.scrollTop = a + ((b - a) / 30) * i;
-  setTimeout(function () {
-    scroll(c, a, b, i);
-  }, 10);
+var currentFloor = "third";
+
+const mapFloors = {
+  third: 0,
+  second: 1,
+  first: 2,
+  ground: 3,
 };
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    const intersecting = entry.isIntersecting;
+
+    if (intersecting) {
+      currentFloor = entry.target.id.split("-card")[0];
+    }
+  });
+});
+
+observer.observe(document.getElementById("third-card"));
+observer.observe(document.getElementById("second-card"));
+observer.observe(document.getElementById("first-card"));
+observer.observe(document.getElementById("ground-card"));
 
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
 
 // updates current position on scroll
-document.addEventListener("wheel", function (ev) {
-  var pos = document.documentElement.scrollTop || document.body.scrollTop;
-
-  var id = Math.round(pos / window.innerHeight);
-
-  IDS.map((i, index) => {
+document.addEventListener("wheel", function () {
+  IDS.map((i) => {
     var curr = document.getElementById(i + "-btn");
 
-    if (index === id) {
+    if (i === currentFloor) {
       curr.className = "active elevator";
-      // curr.className = "active floor";
     } else {
-      curr.className = "elevator ";
-      // curr.className = "floor ";
+      curr.className = "elevator";
     }
   });
 });
 
 // updates current position on click
 window.scrollUp = function () {
-  var pos = document.documentElement.scrollTop || document.body.scrollTop;
-
-  var newId = Math.max(Math.round(pos / window.innerHeight) - 1, 0);
+  var newId = Math.max(mapFloors[currentFloor] - 1, 0);
 
   var scrollContainer = document.getElementById(IDS[newId]);
-
-  var target = scrollContainer;
 
   IDS.map((i, idx) => {
     var curr = document.getElementById(i + "-btn");
@@ -53,33 +58,18 @@ window.scrollUp = function () {
     }
   });
 
-  do {
-    //find scroll container
-    scrollContainer = scrollContainer.parentNode;
-    if (!scrollContainer) return;
-    scrollContainer.scrollTop += 1;
-  } while (scrollContainer.scrollTop == 0);
-
-  var targetY = 0;
-  do {
-    //find the top of target relatively to the container
-    if (target == scrollContainer) break;
-    targetY += target.offsetTop;
-  } while ((target = target.offsetParent));
-
-  // start scrolling
-  scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+  scrollContainer.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "start",
+  });
 };
 
 // updates current position on click
 window.scrollDown = function () {
-  var pos = document.documentElement.scrollTop || document.body.scrollTop;
-
-  var newId = Math.min(Math.round(pos / window.innerHeight) + 1, 3);
+  var newId = Math.min(mapFloors[currentFloor] + 1, 3);
 
   var scrollContainer = document.getElementById(IDS[newId]);
-
-  var target = scrollContainer;
 
   IDS.map((i, idx) => {
     var curr = document.getElementById(i + "-btn");
@@ -92,22 +82,11 @@ window.scrollDown = function () {
     }
   });
 
-  do {
-    //find scroll container
-    scrollContainer = scrollContainer.parentNode;
-    if (!scrollContainer) return;
-    scrollContainer.scrollTop += 1;
-  } while (scrollContainer.scrollTop == 0);
-
-  var targetY = 0;
-  do {
-    //find the top of target relatively to the container
-    if (target == scrollContainer) break;
-    targetY += target.offsetTop;
-  } while ((target = target.offsetParent));
-
-  // start scrolling
-  scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+  scrollContainer.scrollIntoView({
+    behavior: "smooth",
+    block: "start",
+    inline: "start",
+  });
 };
 
 // updates time of day
