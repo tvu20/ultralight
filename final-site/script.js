@@ -1,5 +1,14 @@
 const IDS = ["third", "second", "first", "ground"];
 
+const scroll = function (c, a, b, i) {
+  i++;
+  if (i > 30) return;
+  c.scrollTop = a + ((b - a) / 30) * i;
+  setTimeout(function () {
+    scroll(c, a, b, i);
+  }, 10);
+};
+
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
@@ -24,15 +33,20 @@ document.addEventListener("wheel", function (ev) {
 });
 
 // updates current position on click
-window.smoothScroll = function (target, id) {
-  var scrollContainer = target;
+window.scrollUp = function () {
+  var pos = document.documentElement.scrollTop || document.body.scrollTop;
 
-  // change class!
-  IDS.map((i) => {
+  var newId = Math.max(Math.round(pos / window.innerHeight) - 1, 0);
+
+  var scrollContainer = document.getElementById(IDS[newId]);
+
+  var target = scrollContainer;
+
+  IDS.map((i, idx) => {
     var curr = document.getElementById(i + "-btn");
 
     // active id
-    if (i === id) {
+    if (idx === newId) {
       curr.className = "active elevator";
     } else {
       curr.className = "elevator ";
@@ -53,16 +67,45 @@ window.smoothScroll = function (target, id) {
     targetY += target.offsetTop;
   } while ((target = target.offsetParent));
 
-  console.log("target", targetY);
+  // start scrolling
+  scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
+};
 
-  scroll = function (c, a, b, i) {
-    i++;
-    if (i > 30) return;
-    c.scrollTop = a + ((b - a) / 30) * i;
-    setTimeout(function () {
-      scroll(c, a, b, i);
-    }, 20);
-  };
+// updates current position on click
+window.scrollDown = function () {
+  var pos = document.documentElement.scrollTop || document.body.scrollTop;
+
+  var newId = Math.min(Math.round(pos / window.innerHeight) + 1, 3);
+
+  var scrollContainer = document.getElementById(IDS[newId]);
+
+  var target = scrollContainer;
+
+  IDS.map((i, idx) => {
+    var curr = document.getElementById(i + "-btn");
+
+    // active id
+    if (idx === newId) {
+      curr.className = "active elevator";
+    } else {
+      curr.className = "elevator ";
+    }
+  });
+
+  do {
+    //find scroll container
+    scrollContainer = scrollContainer.parentNode;
+    if (!scrollContainer) return;
+    scrollContainer.scrollTop += 1;
+  } while (scrollContainer.scrollTop == 0);
+
+  var targetY = 0;
+  do {
+    //find the top of target relatively to the container
+    if (target == scrollContainer) break;
+    targetY += target.offsetTop;
+  } while ((target = target.offsetParent));
+
   // start scrolling
   scroll(scrollContainer, scrollContainer.scrollTop, targetY, 0);
 };

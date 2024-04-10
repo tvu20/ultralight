@@ -14,11 +14,7 @@
 
   <body>
     <div id="nav">
-      <button
-        class="up-btn direction"
-        type="button"
-        onclick="smoothScroll(document.getElementById('third'), 'third')"
-      >
+      <button class="up-btn direction" type="button" onclick="scrollUp()">
         up
       </button>
       <div class="elevator-container">
@@ -27,11 +23,7 @@
         <div id="first-btn" class="elevator"></div>
         <div id="ground-btn" class="elevator"></div>
       </div>
-      <button
-        class="down-btn direction"
-        type="button"
-        onclick="smoothScroll(document.getElementById('ground'), 'ground')"
-      >
+      <button class="down-btn direction" type="button" onclick="scrollDown()">
         down
       </button>
       <!-- <button
@@ -66,30 +58,22 @@
     </div>
 
     <div class="up-container">
-      <button
-        class="up-btn"
-        type="button"
-        onclick="smoothScroll(document.getElementById('third'), 'third')"
-      >
-        up
-      </button>
+      <button class="up-btn" type="button" onclick="scrollUp()">up</button>
     </div>
     <div class="down-container">
-      <button
-        class="down-btn"
-        type="button"
-        onclick="smoothScroll(document.getElementById('ground'), 'ground')"
-      >
+      <button class="down-btn" type="button" onclick="scrollDown()">
         down
       </button>
     </div>
 
-    <div id="third" class="floor active">
-      <div class="floor-card"></div>
+    <div class="vertical-scroll">
+      <div id="third" class="floor active">
+        <div class="floor-card">third floor</div>
+      </div>
+      <div id="second" class="floor"><div class="floor-card">second floor</div></div>
+      <div id="first" class="floor"><div class="floor-card">first floor</div></div>
+      <div id="ground" class="floor"><div class="floor-card">ground floor</div></div>
     </div>
-    <div id="second" class="floor"><div class="floor-card"></div></div>
-    <div id="first" class="floor"><div class="floor-card"></div></div>
-    <div id="ground" class="floor"><div class="floor-card"></div></div>
 
     <script src="script.js"></script>
   </body>
