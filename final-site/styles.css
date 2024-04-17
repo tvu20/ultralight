@@ -1,6 +1,54 @@
 body {
   margin: 0;
-  background-color: #fffdf5;
+  font-family: sans-serif;
+}
+
+body[data-status="morning"] {
+  background: linear-gradient(
+    180deg,
+    rgba(254, 161, 128, 1) 0%,
+    rgba(255, 245, 195, 1) 100%
+  );
+}
+
+body[data-status="afternoon"] {
+  background: linear-gradient(
+    180deg,
+    rgba(157, 231, 255, 1) 0%,
+    rgba(255, 255, 243, 1) 100%
+  );
+}
+
+body[data-status="evening"] {
+  background: linear-gradient(
+    180deg,
+    rgba(169, 101, 162, 1) 0%,
+    rgba(229, 172, 182, 1) 100%
+  );
+}
+
+body[data-status="night"] {
+  background: linear-gradient(
+    180deg,
+    rgba(33, 26, 82, 1) 0%,
+    rgba(27, 81, 112, 1) 100%
+  );
+}
+
+body[data-status="evening"] #floor-num,
+body[data-status="night"] #floor-num {
+  color: white;
+}
+
+body[data-status="evening"] #nav .elevator,
+body[data-status="night"] #nav .elevator {
+  background: white;
+  opacity: 0.5;
+}
+
+body[data-status="evening"] #nav .active,
+body[data-status="night"] #nav .active {
+  opacity: 1;
 }
 
 #nav {
@@ -34,7 +82,9 @@ body {
 #nav .elevator {
   height: 10px;
   width: 10px;
-  background: #b6b6b6;
+  background: black;
+  opacity: 0.3;
+  /* background: #b6b6b6; */
   border-radius: 50%;
   transition: all 1s;
   box-sizing: border-box;
@@ -47,7 +97,8 @@ body {
   width: 12px;
   /* background: #b6b6b6; */
   border-radius: 50%;
-  background: black;
+  opacity: 1;
+  /* background: black; */
   /* height: 20px;
   width: 20px;
   border-radius: 50%; */
@@ -96,21 +147,22 @@ body {
   object-fit: contain;
 }
 
-/* #third {
-  background-color: pink;
+#third-card {
+  background-image: url("./3f.jpg");
+  /* background-color: pink; */
 }
 
-#second {
-  background-color: deepskyblue;
+#second-card {
+  background-image: url("./2f.jpg");
 }
 
-#first {
-  background-color: lightsalmon;
+#first-card {
+  background-image: url("./1f.jpg");
 }
 
-#ground {
-  background-color: palegreen;
-} */
+#ground-card {
+  background-image: url("./g.jpg");
+}
 
 .up-container,
 .down-container {
@@ -137,6 +189,8 @@ body {
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
   margin-left: 10vw;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 @media (max-width: 1100px) {

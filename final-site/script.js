@@ -1,7 +1,10 @@
+// list of floor ids
 const IDS = ["third", "second", "first", "ground"];
 
+// current floor
 var currentFloor = "third";
 
+// mapping floor to index
 const mapFloors = {
   third: 0,
   second: 1,
@@ -9,6 +12,7 @@ const mapFloors = {
   ground: 3,
 };
 
+// mapping floor to display name
 const floorName = {
   third: "3F",
   second: "2F",
@@ -16,6 +20,7 @@ const floorName = {
   ground: "G",
 };
 
+// intersection observer to check which floor is onscreen
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     const intersecting = entry.isIntersecting;
@@ -34,13 +39,9 @@ observer.observe(document.getElementById("second-card"));
 observer.observe(document.getElementById("first-card"));
 observer.observe(document.getElementById("ground-card"));
 
+// return to top of screen on load
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
-  var temp = document.querySelectorAll(".up-btn");
-
-  temp.forEach((e) => {
-    e.style.opacity = "0";
-  });
 };
 
 const updateArrows = () => {
@@ -156,6 +157,21 @@ window.scrollDown = function () {
   }
 };
 
+function updateContent(status) {
+  if (status === "evening" || status === "night") {
+    document.getElementById("upd").setAttribute("src", "arrow-up-white.png");
+    document
+      .getElementById("downd")
+      .setAttribute("src", "arrow-down-white.png");
+
+    document.getElementById("upm").setAttribute("src", "arrow-up-white.png");
+    document
+      .getElementById("downm")
+      .setAttribute("src", "arrow-down-white.png");
+  } else {
+  }
+}
+
 // updates time of day
 function updateTimeStatus() {
   const now = new Date();
@@ -173,6 +189,10 @@ function updateTimeStatus() {
     status = "night";
   }
 
+  if (status !== document.body.getAttribute("data-status")) {
+    updateContent(status);
+  }
+
   document.body.setAttribute("data-status", status);
 }
 
@@ -180,3 +200,11 @@ updateTimeStatus(); // Call the function to set initial status
 
 // Update status every second
 setInterval(updateTimeStatus, 1000);
+
+window.onload = function () {
+  updateTimeStatus();
+
+  const status = document.body.getAttribute("data-status");
+
+  updateContent(status);
+};
