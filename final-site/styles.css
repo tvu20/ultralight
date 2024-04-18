@@ -192,6 +192,7 @@ body[data-status="night"] #nav .active {
   margin-left: 10vw;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   position: relative;
 }
 
@@ -228,6 +229,11 @@ body[data-status="night"] #nav .active {
   margin-bottom: 10px;
 }
 
+.floor-description h3 {
+  display: none;
+  margin: 0;
+}
+
 .floor-description img {
   width: 300px;
   margin-left: 30px;
@@ -244,9 +250,23 @@ body[data-status="night"] #nav .active {
   left: 100px;
 }
 
+.mobile-img {
+  display: none;
+}
+
 @media (max-width: 1100px) {
   .floor-card {
     margin-left: 5vw;
+  }
+}
+
+@media (max-width: 850px) {
+  #nav {
+    padding-right: 10px;
+  }
+
+  #floor-num {
+    right: 50px;
   }
 }
 
@@ -279,6 +299,10 @@ body[data-status="night"] #nav .active {
     margin: 0 10px;
   }
 
+  #floor-num {
+    display: none;
+  }
+
   .up-container {
     display: block;
     position: fixed;
@@ -299,5 +323,47 @@ body[data-status="night"] #nav .active {
 
   .direction {
     display: none;
+  }
+
+  .floor-description {
+    background: white;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    /* display: flex;
+    flex-direction: column;
+    align-items: center; */
+  }
+
+  .floor-description img {
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 10px;
+    /* height: 250px; */
+  }
+
+  .vertical_dotted_line {
+    display: none;
+  }
+
+  .floor-description h3 {
+    display: block;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    font-weight: 400;
+  }
+
+  .mobile-img {
+    width: 100%;
+    display: block;
+    position: top;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    height: 250px;
+    object-fit: cover;
+    object-position: center;
   }
 }
