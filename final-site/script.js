@@ -20,6 +20,34 @@ const floorName = {
   ground: "G",
 };
 
+const descriptions3 = {
+  morning: "Noise: Silent <br/> Company: Few",
+  afternoon: "Noise: Plentiful <br/> Company: Plentiful",
+  evening: "Noise: Plentiful <br/> Company: Occasional",
+  night: "Noise: Audible <br/> Company: Plentiful",
+};
+
+const descriptions2 = {
+  morning: "Noise: Quiet <br/> Company: Plentiful",
+  afternoon: "Noise: Chatter <br/> Company: Plentiful",
+  evening: "Noise: Quiet <br/> Company: Occasional",
+  night: "Noise: Silent <br/> Company: None",
+};
+
+const descriptions1 = {
+  morning: "Noise: Footsteps <br/> Company: Occasional",
+  afternoon: "Noise: Footsteps <br/> Company: Plentiful",
+  evening: "Noise: Footsteps <br/> Company: Plentiful",
+  night: "Noise: Quiet <br/> Company: None",
+};
+
+const descriptionsg = {
+  morning: "Noise: Quiet <br/> Company: Rare",
+  afternoon: "Noise: Audible <br/> Company: Occasional",
+  evening: "Noise: Deafening <br/> Company: Large Crowd",
+  night: "Noise: Silent <br/> Company: None",
+};
+
 // intersection observer to check which floor is onscreen
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -157,6 +185,13 @@ window.scrollDown = function () {
   }
 };
 
+function updateLines(value) {
+  document.getElementById("line-3").style.left = value;
+  document.getElementById("line-2").style.left = value;
+  document.getElementById("line-1").style.left = value;
+  document.getElementById("line-g").style.left = value;
+}
+
 function updateContent(status) {
   if (status === "evening" || status === "night") {
     document.getElementById("upd").setAttribute("src", "arrow-up-white.png");
@@ -168,8 +203,22 @@ function updateContent(status) {
     document
       .getElementById("downm")
       .setAttribute("src", "arrow-down-white.png");
-  } else {
   }
+
+  if (status === "night") {
+    updateLines("292.5px");
+  } else if (status === "morning") {
+    updateLines("67.5px");
+  } else if (status === "afternoon") {
+    updateLines("142.5px");
+  } else {
+    updateLines("217.5px");
+  }
+
+  document.getElementById("third-eval").innerHTML = descriptions3[status];
+  document.getElementById("second-eval").innerHTML = descriptions2[status];
+  document.getElementById("first-eval").innerHTML = descriptions1[status];
+  document.getElementById("ground-eval").innerHTML = descriptionsg[status];
 }
 
 // updates time of day

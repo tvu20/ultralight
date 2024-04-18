@@ -1,6 +1,7 @@
 body {
   margin: 0;
   font-family: sans-serif;
+  --box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
 }
 
 body[data-status="morning"] {
@@ -187,10 +188,60 @@ body[data-status="night"] #nav .active {
   height: 90vh;
   background-color: white;
   border-radius: 15px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 0px;
+  box-shadow: var(--box-shadow);
   margin-left: 10vw;
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+}
+
+.floor-description {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 15px;
+  box-shadow: var(--box-shadow);
+  /* padding: 10px 30px; */
+  width: 360px;
+}
+
+.floor-description h1,
+.floor-description h2,
+.floor-description p {
+  margin: 0 30px;
+}
+
+.floor-description h1 {
+  font-size: 21px;
+  margin-top: 30px;
+}
+
+.floor-description h2 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.floor-description p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.floor-description img {
+  width: 300px;
+  margin-left: 30px;
+  height: 160px;
+  margin-bottom: 30px;
+}
+
+.vertical_dotted_line {
+  border-left: 3px dotted black;
+  height: 155px;
+  width: 1px;
+  position: absolute;
+  bottom: 30px;
+  left: 100px;
 }
 
 @media (max-width: 1100px) {
