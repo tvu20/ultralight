@@ -220,8 +220,10 @@ body[data-status="night"] #nav .active {
 
 .floor-description h2 {
   font-size: 14px;
-  margin-bottom: 10px;
+
   font-weight: 600;
+  display: inline;
+  margin-right: 5px;
 }
 
 .floor-description p {
@@ -259,6 +261,17 @@ body[data-status="night"] #nav .active {
   display: none;
 }
 
+.holder {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.icon {
+  height: 20px !important;
+  width: 20px !important;
+  margin: 0 !important;
+}
+
 @media (max-width: 1100px) {
   .floor-card {
     margin-left: 5vw;
@@ -287,6 +300,11 @@ body[data-status="night"] #nav .active {
   }
 
   #nav {
+    justify-content: center;
+    padding-right: 0px;
+  }
+
+  /* #nav {
     height: 30px;
     width: 100vw;
     padding-right: 0px;
@@ -294,15 +312,15 @@ body[data-status="night"] #nav .active {
 
     flex-direction: row;
     justify-content: center;
-  }
+   } */
 
-  #nav .elevator-container {
+  /* #nav .elevator-container {
     flex-direction: row;
   }
 
   #nav .elevator {
     margin: 0 10px;
-  }
+  } */
 
   #floor-num {
     display: none;
