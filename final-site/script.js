@@ -109,6 +109,20 @@ document.addEventListener("wheel", function () {
   updateArrows();
 });
 
+document.addEventListener('touchstart', function () {
+  IDS.map((i) => {
+    var curr = document.getElementById(i + "-btn");
+
+    if (i === currentFloor) {
+      curr.className = "active elevator";
+    } else {
+      curr.className = "elevator";
+    }
+  });
+
+  updateArrows();
+})
+
 // updates current position on click
 window.scrollUp = function () {
   var newId = Math.max(mapFloors[currentFloor] - 1, 0);
